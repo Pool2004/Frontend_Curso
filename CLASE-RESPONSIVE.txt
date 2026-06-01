@@ -1,0 +1,187 @@
+CLASE Y ACTIVIDAD: DISEÑO RESPONSIVE Y MEDIA QUERIES
+Aprende a adaptar tus páginas web a cualquier dispositivo (Móvil, Tablet, Computador)
+
+═══════════════════════════════════════════════════════════
+
+¿QUÉ ES EL DISEÑO RESPONSIVE (RESPONSIVO)?
+Es la técnica de diseño web que permite que una página web se adapte automáticamente al tamaño de la pantalla del usuario. Ya sea que se visualice en un teléfono inteligente pequeño, una tablet, una laptop o un gran monitor de escritorio.
+
+Las tres columnas del Diseño Responsivo:
+1. El Viewport (La ventana gráfica): Permite al navegador saber cómo escalar la página.
+2. Media Queries (Consultas de Medios): Aplican diferentes estilos según el tamaño de la pantalla.
+3. Diseños Flexibles: Uso de porcentajes, Flexbox y CSS Grid en lugar de anchos fijos en píxeles.
+
+═══════════════════════════════════════════════════════════
+
+PARTE 1: EL META TAG VIEWPORT (5 minutos)
+
+Para que el diseño responsivo funcione en dispositivos móviles, DEBES incluir esta línea dentro de la etiqueta <head> en tu HTML:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+¿Qué hace?
+- width=device-width: Ajusta el ancho de la página al ancho de la pantalla del dispositivo.
+- initial-scale=1.0: Establece el nivel de zoom inicial al cargar la página.
+*Sin esto, los teléfonos inteligentes mostrarán la versión de escritorio de la página en miniatura.*
+
+═══════════════════════════════════════════════════════════
+
+PARTE 2: ¿QUÉ ES UNA MEDIA QUERY? (15 minutos)
+
+Una Media Query es una regla de CSS que aplica estilos condicionalmente si se cumple una regla física (como el ancho de la pantalla).
+
+SINTAXIS BÁSICA:
+
+@media (min-width: 768px) {
+    /* Los estilos aquí adentro SOLO se aplicarán si la pantalla mide 768px o más */
+    body {
+        background-color: lightblue;
+    }
+}
+
+Tipos principales de Media Queries:
+
+A) Mobile-First (Recomendado):
+Comienzas diseñando para pantallas pequeñas (móviles) sin media queries, y luego agregas reglas para pantallas más grandes usando 'min-width'.
+
+B) Desktop-First:
+Comienzas diseñando para pantallas grandes (computadores) y agregas reglas para pantallas más chicas usando 'max-width'.
+
+═══════════════════════════════════════════════════════════
+
+PARTE 3: BREAKPOINTS (PUNTOS DE RUPTURA) COMUNES (10 minutos)
+
+Los breakpoints son los anchos de pantalla específicos donde el diseño cambia. Los estándares son:
+
+• Pantallas Móviles: Hasta 480px o 576px
+• Tablets: Desde 768px hasta 1024px
+• Laptops / Pantallas medianas: Desde 1024px hasta 1200px
+• Computadoras de Escritorio / Monitores grandes: Más de 1200px
+
+Ejemplo de estructura Mobile-First:
+
+/* 1. Estilos por defecto (Móvil) */
+.contenedor {
+    width: 100%;
+    padding: 10px;
+}
+
+/* 2. Estilos para Tablets (768px o más) */
+@media (min-width: 768px) {
+    .contenedor {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* 3. Estilos para Computadores (1024px o más) */
+@media (min-width: 1024px) {
+    .contenedor {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+
+═══════════════════════════════════════════════════════════
+
+ACTIVIDAD PRÁCTICA: CREAR UNA TARJETA DE PERFIL Y UNA GALERÍA RESPONSIVA
+Usa el archivo 'actividad-responsive.html' interactivo que acompaña esta clase.
+
+OBJETIVO:
+Modificar los estilos CSS para lograr que un sitio web que se ve mal en móviles pase a verse excelente y ordenado en todos los dispositivos.
+
+═══════════════════════════════════════════════════════════
+
+PASOS A COMPLETAR EN LA ACTIVIDAD:
+
+[EJERCICIO 1: EL MENÚ DE NAVEGACIÓN RESPONSIVO]
+En móvil, los enlaces de navegación deben estar en vertical. En tablet y escritorio, deben ordenarse en horizontal.
+
+CÓDIGO A COMPLETAR EN TU ARCHIVO CSS:
+
+/* Por defecto: Estilo para móvil (lista en vertical) */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+/* Para pantallas medianas y grandes (768px o más) */
+@media (min-width: 768px) {
+    .menu {
+        flex-direction: row; /* Cambia a horizontal */
+        justify-content: space-between;
+    }
+}
+
+───────────────────────────────────────────────────────────
+
+[EJERCICIO 2: GRID DE PRODUCTOS / SERVICIOS]
+Tenemos una sección de servicios. 
+- En móvil: Debe ocupar 1 columna (1 tarjeta por fila).
+- En tablet (768px o más): Debe ocupar 2 columnas.
+- En escritorio (1024px o más): Debe ocupar 3 columnas.
+
+CÓDIGO A COMPLETAR:
+
+/* Por defecto: Móvil (1 columna) */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna que ocupa todo el ancho */
+    gap: 20px;
+}
+
+/* Para Tablet (768px o más) */
+@media (min-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    }
+}
+
+/* Para Escritorio (1024px o más) */
+@media (min-width: 1024px) {
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    }
+}
+
+───────────────────────────────────────────────────────────
+
+[EJERCICIO 3: LA TARJETA DE DETALLE (CAMBIO DE ORIENTACIÓN)]
+Tenemos una tarjeta de perfil de usuario.
+- En móvil: La imagen va arriba y el texto abajo (diseño de columna).
+- En escritorio: La imagen va a la izquierda y el texto a la derecha (diseño de fila).
+
+CÓDIGO A COMPLETAR:
+
+.tarjeta-perfil {
+    display: flex;
+    flex-direction: column; /* Columna por defecto en móvil */
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .tarjeta-perfil {
+        flex-direction: row; /* Fila en pantallas grandes */
+        text-align: left;
+    }
+}
+
+═══════════════════════════════════════════════════════════
+
+CHECKLIST DE REVISIÓN PARA TU PROYECTO
+
+□ ¿Has agregado el <meta name="viewport"> en tu HTML?
+□ ¿El menú de navegación se ve bien en tu teléfono y en el computador?
+□ ¿Las imágenes no se desbordan de la pantalla? (Usa: max-width: 100%; height: auto;)
+□ ¿Estás usando unidades relativas (%, em, rem, vw, vh) en lugar de px fijos para las dimensiones grandes?
+□ ¿Tus media queries están al final de tu archivo CSS para evitar conflictos de cascada?
+
+═══════════════════════════════════════════════════════════
+
+¡CONSEJO PROFESIONAL!
+Diseña siempre con el método "Mobile-First". Es más sencillo añadir columnas e interactividad a pantallas grandes que intentar encoger un diseño complejo de escritorio para que quepa en un teléfono celular.
+
+¡Feliz codificación responsiva! 📱💻🖥️

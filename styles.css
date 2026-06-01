@@ -1,0 +1,27 @@
+/* Mobile First */
+
+@media (min-width: 420px) {
+
+    .enunciado {
+        color: red;
+    }
+
+    img {
+        width: 50%;
+        height: auto;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .enunciado {
+        color: rgb(38, 0, 255)
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+}

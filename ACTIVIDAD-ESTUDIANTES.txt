@@ -1,0 +1,228 @@
+ACTIVIDAD: CALCULADORA DE ESTUDIANTES
+Practica variables, operadores, condicionales y bucles
+
+═══════════════════════════════════════════════════════════
+
+INSTRUCCIONES GENERALES:
+
+• Completa cada sección en orden
+• Usa la consola del navegador (F12) para probar tu código
+• Copia el código en un archivo JavaScript
+• Comprueba los resultados esperados
+• ¡No tengas miedo de cometer errores! Los errores son parte del aprendizaje
+
+═══════════════════════════════════════════════════════════
+
+PARTE 1: VARIABLES Y TIPOS DE DATOS (15 minutos)
+
+OBJETIVO: Declarar y usar variables con diferentes tipos de datos
+
+CÓDIGO A COMPLETAR:
+
+// PARTE 1: Completa con tus datos
+let miNombre = ""; // Tu nombre aquí
+let miEdad = 0; // Tu edad aquí
+let misCalificaciones = []; // Agrega 5 calificaciones entre 1.0 y 5.0
+let soyPremiado = false; // ¿Eres estudiante premiado?
+
+// Verifica en la consola escribiendo:
+console.log(miNombre, miEdad, misCalificaciones, soyPremiado);
+
+
+EJEMPLO DE RESULTADO ESPERADO:
+
+Juan 20 [4.2, 3.8, 4.5, 3.9, 4.1] true
+
+
+PISTAS:
+✓ Un string se declara con comillas: "texto"
+✓ Un número es solo números: 20
+✓ Un array usa corchetes: [1, 2, 3]
+✓ Un booleano es: true o false
+
+═══════════════════════════════════════════════════════════
+
+PARTE 2: OPERADORES Y CÁLCULOS (20 minutos)
+
+OBJETIVO: Crear funciones para calcular promedio y otros datos
+
+CÓDIGO A COMPLETAR:
+
+// Función 1: Calcular promedio
+function calcularPromedio(calificaciones) {
+    // TODO: Suma todas las calificaciones y divide entre la cantidad
+    // Pista: Usa un bucle for o .reduce()
+}
+
+// Función 2: Verificar si aprobó
+function aprobo(promedio) {
+    // TODO: Retorna true si promedio >= 3.0, false si no
+}
+
+// Función 3: Años para graduarse
+function anosParaGraduarse(edadActual) {
+    // TODO: Asume 4 años de carrera, retorna: 2026 + 4 - edadActual
+}
+
+// Prueba tus funciones:
+let miPromedio = calcularPromedio(misCalificaciones);
+console.log("Mi promedio:", miPromedio);
+console.log("¿Aprobé?", aprobo(miPromedio));
+console.log("Me gradúo en:", anosParaGraduarse(miEdad));
+
+
+RESULTADO ESPERADO:
+
+Mi promedio: 4.1
+¿Aprobé? true
+Me gradúo en: 2030
+
+
+PISTAS:
+✓ Para sumar: suma = suma + elemento
+✓ Para dividir: total / cantidad
+✓ Para retornar: return valor
+✓ Para comparar: >= , <= , == , ===
+
+═══════════════════════════════════════════════════════════
+
+PARTE 3: CONDICIONALES (15 minutos)
+
+OBJETIVO: Evaluar el desempeño académico con if/else
+
+CÓDIGO A COMPLETAR:
+
+function evaluarDesempeño(promedio) {
+    // TODO: Implementa los siguientes condicionales:
+    // Si promedio > 4.5: imprime "¡Excelente desempeño!"
+    // Si promedio > 4.0: imprime "Muy buen trabajo"
+    // Si promedio >= 3.0: imprime "Aprobado"
+    // Si promedio < 3.0: imprime "Requiere mejora"
+}
+
+// Prueba:
+evaluarDesempeño(miPromedio);
+
+
+RESULTADO ESPERADO (con promedio 4.1):
+
+Muy buen trabajo
+
+
+ESTRUCTURA DEL CONDICIONAL:
+
+if (condición) {
+    // código si es verdadero
+} else if (otra condición) {
+    // código si la otra es verdadera
+} else {
+    // código si ninguna es verdadera
+}
+
+═══════════════════════════════════════════════════════════
+
+PARTE 4: BUCLES FOR (20 minutos)
+
+OBJETIVO: Recorrer el array de calificaciones
+
+CÓDIGO A COMPLETAR:
+
+function mostrarCalificaciones(calificaciones) {
+    // TODO: Usa un bucle for para iterar sobre las calificaciones
+    // Imprime: "Corte 1: X.X"
+    // Imprime: "Corte 2: X.X"
+    // ... y así sucesivamente
+}
+
+// Prueba:
+mostrarCalificaciones(misCalificaciones);
+
+
+RESULTADO ESPERADO:
+
+Corte 1: 4.2
+Corte 2: 3.8
+Corte 3: 4.5
+Corte 4: 3.9
+Corte 5: 4.1
+
+
+SINTAXIS DEL BUCLE FOR:
+
+for (let i = 0; i < cantidad; i++) {
+    // código a repetir
+    // i es el número actual (0, 1, 2, ...)
+}
+
+PISTAS:
+✓ Para acceder a un elemento: array[i]
+✓ Para saber la cantidad: array.length
+✓ Para concatenar texto: "Corte " + numero + ": " + valor
+
+═══════════════════════════════════════════════════════════
+
+DESAFÍO EXTRA (30 minutos - Opcional)
+
+OBJETIVO: Trabajar con arrays de objetos y filtrado de datos
+
+CÓDIGO:
+
+let estudiantes = [
+    { nombre: "Juan", calificaciones: [4.2, 4.5, 4.8, 4.0, 4.3] },
+    { nombre: "María", calificaciones: [3.5, 3.8, 3.9, 3.6, 3.7] },
+    { nombre: "Pedro", calificaciones: [4.7, 4.9, 4.8, 5.0, 4.6] }
+];
+
+TAREAS:
+
+1. Crea una función que recorra todos los estudiantes
+2. Calcula el promedio de cada uno (usa calcularPromedio)
+3. Mostrar solo los que tengan promedio > 4.0
+
+RESULTADO ESPERADO:
+
+Juan - Promedio: 4.36
+Pedro - Promedio: 4.80
+
+
+BONUS (si completas todo):
+
+✓ Contar cuántos estudiantes aprobaron (promedio >= 3.0)
+✓ Calcular el promedio general del grupo
+✓ Encontrar el estudiante con la calificación más alta
+
+═══════════════════════════════════════════════════════════
+
+CHECKLIST DE REVISIÓN
+
+□ Parte 1: Variables declaradas correctamente
+□ Parte 2: Las tres funciones funcionan sin errores
+□ Parte 3: Los condicionales muestran el mensaje correcto
+□ Parte 4: El bucle imprime todas las calificaciones
+□ Desafío (opcional): Filtro de estudiantes funcionando
+□ Código limpio y sin errores de consola
+
+═══════════════════════════════════════════════════════════
+
+NOTAS IMPORTANTES:
+
+• Abre la consola del navegador con F12 (o Ctrl+Shift+I)
+• Si hay error, aparecerá en rojo en la consola
+• Lee el mensaje de error cuidadosamente
+• Los errores comunes:
+  - Olvidar comillas en strings
+  - Olvidar llaves en funciones/condicionales
+  - Olvidar "return" en funciones
+  - Usar "var" o "const" en lugar de "let"
+
+═══════════════════════════════════════════════════════════
+
+¡ÉXITO EN TU ACTIVIDAD!
+
+Si tienes dudas, recuerda:
+1. Lee el mensaje de error
+2. Revisa tu sintaxis
+3. Compara con los ejemplos
+4. Pregunta a tu profesor
+
+═══════════════════════════════════════════════════════════

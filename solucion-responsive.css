@@ -1,0 +1,145 @@
+/* ==========================================================================
+   SOLUCIÓN DE LA CLASE: DISEÑO RESPONSIVE Y MEDIA QUERIES
+   Hoja de Estilos de Referencia (Código Completo y Limpio)
+   ========================================================================== */
+
+/* 
+   REGLA DE ORO DE MOBILE-FIRST:
+   Escribe los estilos para móvil (por defecto) primero, fuera de cualquier media query.
+   Luego añade media queries con 'min-width' para adaptar el diseño a pantallas más grandes.
+*/
+
+
+/* ==========================================================================
+   EJERCICIO 1: MENÚ DE NAVEGACIÓN RESPONSIVO
+   ========================================================================== */
+
+/* Estilos por defecto (Móviles - Pantallas pequeñas) */
+.logo-container {
+    display: flex;
+    flex-direction: column;  /* Menú apilado en vertical */
+    gap: 12px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 20px;
+    color: #6366f1;
+    text-align: center;      /* Logo centrado en móvil */
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;  /* Enlaces uno debajo del otro */
+    gap: 8px;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+/* Adaptación para pantallas de Tablet y Escritorio (768px o más) */
+@media (min-width: 768px) {
+    .logo-container {
+        flex-direction: row;          /* Cambia a fila horizontal */
+        justify-content: space-between; /* Distribuye espacio entre logo y menú */
+        align-items: center;          /* Centrado vertical */
+    }
+
+    .logo {
+        text-align: left;             /* Logo alineado a la izquierda */
+    }
+
+    .menu {
+        flex-direction: row;          /* Enlaces horizontales uno al lado de otro */
+        width: auto;                  /* Deja que ocupe solo el espacio necesario */
+        gap: 12px;
+    }
+}
+
+
+/* ==========================================================================
+   EJERCICIO 2: GRID DE PRODUCTOS / SERVICIOS (MULTICOLUMNA)
+   ========================================================================== */
+
+/* Estilos por defecto (Móvil - 1 Columna) */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* Una sola columna que ocupa todo el espacio */
+    gap: 16px;
+}
+
+.servicio-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border-top: 4px solid #10b981;
+    border-left: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Adaptación para Tablet (768px o más - 2 Columnas) */
+@media (min-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    }
+}
+
+/* Adaptación para Computadores y Laptops (1024px o más - 3 Columnas) */
+@media (min-width: 1024px) {
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas de tamaño idéntico */
+    }
+}
+
+
+/* ==========================================================================
+   EJERCICIO 3: LA TARJETA DE PERFIL (CAMBIO DE DIRECCIÓN)
+   ========================================================================== */
+
+/* Estilos por defecto (Móvil - Diseño de Tarjeta vertical) */
+.tarjeta-perfil {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;    /* Elementos ordenados verticalmente (Foto arriba, Texto abajo) */
+    align-items: center;       /* Centrado horizontal */
+    text-align: center;
+    gap: 20px;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+    flex-shrink: 0;
+}
+
+/* Adaptación para Tablet y Escritorio (768px o más - Fila horizontal) */
+@media (min-width: 768px) {
+    .tarjeta-perfil {
+        flex-direction: row;     /* Cambia a fila horizontal (Foto izquierda, Texto derecha) */
+        text-align: left;        /* Alinea los textos hacia la izquierda */
+        align-items: center;     /* Centrado vertical de la imagen respecto al texto */
+        gap: 24px;               /* Añade separación de 24 píxeles */
+    }
+}

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi pagina</title>
+    <link rel="stylesheet" href="./styles.css">
+
 </head>
+
 <body>
 
     <hr>
@@ -12,12 +16,13 @@
     <small>Esto es un texto pequeño</small>
     <em>Esto es un texto en cursiva</em>
     <br>
-    <img alt="Por si no carga la imagen" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+    <img alt="Por si no carga la imagen"
+        src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width="500">
 
     <section>
-        <h1>Esto es un enunciado.</h1>
-        <h2>Esto es un subtítulo.</h2>
-        <h3>Esto es un subsubtítulo.</h3>
+        <h1 class="enunciado">Esto es un enunciado.</h1>
+        <h2 class="enunciado">Esto es un subtítulo.</h2>
+        <h3 class="enunciado">Esto es un subsubtítulo.</h3>
     </section>
 
     <article>
@@ -28,10 +33,17 @@
         <label for="">Esto es una etiqueta</label>
     </aside>
 
-    <input>
+    <input type="text">
+    <input type="time">
+
+    <button id="miBoton">Click Here!</button>
+    <button>Hola mundo!</button>
 
     <footer>
         <p>Esto es un pie de pagina</p>
     </footer>
 </body>
+
+<script type="module" src="util.js"></script>
+
 </html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad: Calculadora de Estudiantes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #ddd;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #ccc;
+        }
+        
+        .output {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 13px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #856404;
+        }
+        
+        .bonus {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Actividad: Calculadora de Estudiantes</h1>
+        <p class="subtitle">Practica variables, operadores, condicionales y bucles</p>
+        
+        <div class="instructions">
+            <strong>📝 Instrucciones:</strong> Completa cada sección editando el código JavaScript en la consola del navegador (presiona F12). 
+            Sigue las partes en orden y comprueba los resultados.
+        </div>
+        
+        <!-- PARTE 1 -->
+        <div class="section">
+            <h2>📌 Parte 1: Variables y Tipos de Datos</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Completa las variables con tus datos personales:
+            </p>
+            <textarea rows="8" readonly>// PARTE 1: Completa con tus datos
+let miNombre = ""; // Tu nombre aquí
+let miEdad = 0; // Tu edad aquí
+let misCalificaciones = []; // Agrega 5 calificaciones entre 1.0 y 5.0
+let soyPremiado = false; // ¿Eres estudiante premiado?
+
+// Verifica en la consola escribiendo:
+console.log(miNombre, miEdad, misCalificaciones, soyPremiado);</textarea>
+        </div>
+        
+        <!-- PARTE 2 -->
+        <div class="section">
+            <h2>🔢 Parte 2: Operadores y Cálculos</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Crea las siguientes funciones:
+            </p>
+            <textarea rows="15" readonly>// PARTE 2: Funciones de cálculo
+
+// Función 1: Calcular promedio
+function calcularPromedio(calificaciones) {
+    // TODO: Suma todas las calificaciones y divide entre la cantidad
+    // Pista: Usa un bucle for o .reduce()
+}
+
+// Función 2: Verificar si aprobó
+function aprobo(promedio) {
+    // TODO: Retorna true si promedio >= 3.0, false si no
+}
+
+// Función 3: Años para graduarse
+function anosParaGraduarse(edadActual) {
+    // TODO: Asume 4 años de carrera, retorna: 2026 + 4 - edadActual
+}
+
+// Prueba tus funciones:
+let miPromedio = calcularPromedio(misCalificaciones);
+console.log("Mi promedio:", miPromedio);
+console.log("¿Aprobé?", aprobo(miPromedio));
+console.log("Me gradúo en:", anosParaGraduarse(miEdad));</textarea>
+        </div>
+        
+        <!-- PARTE 3 -->
+        <div class="section">
+            <h2>❓ Parte 3: Condicionales</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Crea una función que evalúe el desempeño académico:
+            </p>
+            <textarea rows="12" readonly>// PARTE 3: Condicionales anidados
+
+function evaluarDesempeño(promedio) {
+    // TODO: Implementa los siguientes condicionales:
+    // Si promedio > 4.5: imprime "¡Excelente desempeño!"
+    // Si promedio > 4.0: imprime "Muy buen trabajo"
+    // Si promedio >= 3.0: imprime "Aprobado"
+    // Si promedio < 3.0: imprime "Requiere mejora"
+}
+
+// Prueba:
+evaluarDesempeño(miPromedio);</textarea>
+        </div>
+        
+        <!-- PARTE 4 -->
+        <div class="section">
+            <h2>🔄 Parte 4: Bucles FOR</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Recorre el array de calificaciones e imprime cada una:
+            </p>
+            <textarea rows="10" readonly>// PARTE 4: Bucle FOR
+
+function mostrarCalificaciones(calificaciones) {
+    // TODO: Usa un bucle for para iterar sobre las calificaciones
+    // Imprime: "Corte 1: X.X"
+    // Imprime: "Corte 2: X.X"
+    // ... y así sucesivamente
+}
+
+// Prueba:
+mostrarCalificaciones(misCalificaciones);</textarea>
+        </div>
+        
+        <!-- DESAFÍO EXTRA -->
+        <div class="section">
+            <h2>🌟 Desafío Extra (Opcional)</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Crea un array de 3 estudiantes y filtra los que tengan promedio > 4.0:
+            </p>
+            <textarea rows="12" readonly>// DESAFÍO: Manejo avanzado de objetos y bucles
+
+let estudiantes = [
+    { nombre: "Juan", calificaciones: [4.2, 4.5, 4.8, 4.0, 4.3] },
+    { nombre: "María", calificaciones: [3.5, 3.8, 3.9, 3.6, 3.7] },
+    { nombre: "Pedro", calificaciones: [4.7, 4.9, 4.8, 5.0, 4.6] }
+];
+
+// TODO: Usa bucles while o for para:
+// 1. Calcular el promedio de cada estudiante
+// 2. Mostrar solo los que tengan promedio > 4.0
+// Pista: Usa if dentro del bucle para filtrar</textarea>
+            
+            <div class="bonus">
+                <strong>💡 Bonus:</strong> Si completas el desafío, intenta agregar más funcionalidades como calcular cuántos estudiantes aprobaron, cuál es el promedio general del grupo, etc.
+            </div>
+        </div>
+        
+        <!-- PRUEBAS -->
+        <div class="section">
+            <h2>✅ Comprueba tu trabajo</h2>
+            <p style="margin-bottom: 15px; color: #666;">
+                Abre la consola del navegador (F12) y ejecuta el código para ver los resultados.
+            </p>
+            <div class="button-group">
+                <button class="btn-primary" onclick="mostrarConsejo()">📌 Ver Consejos</button>
+                <button class="btn-secondary" onclick="limpiarConsola()">🗑️ Limpiar Consola</button>
+            </div>
+            
+            <div class="output" id="output">
+                Aquí aparecerán los mensajes de la consola...
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Capturar mensajes de console.log
+        const output = document.getElementById('output');
+        const originalLog = console.log;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            output.textContent += args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg) : arg
+            ).join(' ') + '\n';
+        };
+        
+        function mostrarConsejo() {
+            console.log("=== 💡 CONSEJOS ÚTILES ===\n");
+            console.log("1. Verifica que tus variables estén definidas");
+            console.log("2. Usa console.log() para depurar tu código");
+            console.log("3. Los arrays se recorren con: for(let i=0; i<array.length; i++)");
+            console.log("4. Para calcular promedio: suma / cantidad");
+            console.log("5. Los condicionales usan: if, else if, else\n");
+        }
+        
+        function limpiarConsola() {
+            output.textContent = '';
+        }
+        
+        // Mensaje inicial
+        console.log("=== 📚 BIENVENIDO A LA ACTIVIDAD ===");
+        console.log("Abre el archivo en un editor de código");
+        console.log("y comienza a completar las funciones.\n");
+        console.log("Presiona F12 para ver esta consola");
+    </script>
+</body>
+</html>
